@@ -1,0 +1,27 @@
+<!-- src/app/projects/projects.component.html -->
+<div class="projects-container">
+    <h1 class="page-title">My projects</h1>
+
+    <div class="projects-grid">
+        <div *ngFor="let project of projects" class="project-card">
+            <div class="image-container">
+                <img [src]="project.imageUrl" [alt]="project.name" class="project-image">
+            </div>
+
+            <div class="project-content">
+                <h2 class="project-title">{{ project.name }}</h2>
+                <p class="project-description">{{ project.description }}</p>
+
+                <div class="project-actions">
+                    <button (click)="openGithub(project.githubUrl)" class="github-button">
+                        <i class="fab fa-github"></i> Voir sur GitHub
+                    </button>
+
+                    <button (click)="openVideo(project.videoUrl)" class="video-button" [disabled]="!project.videoUrl">
+                        <i class="fas fa-video"></i> Voir la démo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

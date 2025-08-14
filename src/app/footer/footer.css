@@ -1,0 +1,261 @@
+.cyber-footer {
+    background: rgba(15, 32, 39, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 229, 255, 0.3);
+    color: #b2ebf2;
+    padding: 2rem 5%;
+    font-family: 'Segoe UI', sans-serif;
+    /* ✅ Protection anti-bloquage */
+    position: relative;
+    /* S'assure que le footer soit au-dessus */
+    z-index: 9999;
+    /* Priorité d'affichage maximale */
+    pointer-events: auto;
+    /* Les clics sont autorisés */
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    margin-bottom: 1.5rem;
+}
+
+.footer-title {
+    color: #00e5ff;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #00e5ff, #3adb76);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+h4 {
+    color: #00e5ff;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+h4::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, #00e5ff, transparent);
+}
+
+
+/* Contact Section Styles */
+
+.contact-info {
+    margin-top: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    color: #b2ebf2;
+    transition: all 0.3s ease;
+}
+
+.contact-item i {
+    width: 20px;
+    margin-right: 12px;
+    color: #00e5ff;
+    text-align: center;
+}
+
+.contact-item:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+
+/* Social Icons - Font Awesome Enhanced */
+
+.social-links {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.social-icon {
+    color: #b2ebf2;
+    background: rgba(0, 229, 255, 0.1);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+.social-icon:hover::before {
+    left: 100%;
+}
+
+.social-icon:hover {
+    background: rgba(0, 229, 255, 0.2);
+    color: white;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+
+/* Specific icon colors */
+
+.fa-linkedin-in {
+    color: #0A66C2;
+}
+
+.fa-github {
+    color: #f0f6fc;
+}
+
+.fa-envelope {
+    color: #EA4335;
+}
+
+.fa-phone-alt {
+    color: #34A853;
+}
+
+.footer-link {
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+    pointer-events: auto;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-link {
+    color: #b2ebf2;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #00e5ff;
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.energy-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff2d75, #3adb76, #00e5ff, transparent);
+    background-size: 200% auto;
+    animation: energyFlow 4s linear infinite;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes energyFlow {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
+/* Angular badge */
+
+.angular-icon {
+    color: #DD0031;
+    margin: 0 3px;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    .footer-section {
+        text-align: center;
+    }
+    h4::after {
+        left: 25%;
+        width: 50%;
+    }
+    .social-links {
+        justify-content: center;
+    }
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+.social-icon {
+    pointer-events: auto !important;
+    /* Assurez-vous que les clics sont autorisés */
+    cursor: pointer;
+    z-index: 999;
+}
+
+.social-icon i {
+    pointer-events: none;
+    /* Les icônes ne doivent pas intercepter les clics */
+}
