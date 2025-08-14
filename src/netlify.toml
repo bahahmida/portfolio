@@ -1,0 +1,6 @@
+[build]
+  # La commande pour construire ton projet Angular
+  command = "ng build --configuration production"
+
+  # Le dossier où Angular met les fichiers prêts à être publiés
+  publish = "dist/portfolio/browser"
