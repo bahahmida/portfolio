@@ -10,12 +10,14 @@
         "serve:ssr:portfolio": "node dist/portfolio/server/server.mjs"
     },
     "prettier": {
-        "overrides": [{
-            "files": "*.html",
-            "options": {
-                "parser": "angular"
+        "overrides": [
+            {
+                "files": "*.html",
+                "options": {
+                    "parser": "angular"
+                }
             }
-        }]
+        ]
     },
     "private": true,
     "dependencies": {
@@ -37,6 +39,7 @@
         "@angular/build": "^20.1.5",
         "@angular/cli": "^20.1.5",
         "@angular/compiler-cli": "^20.1.0",
+        "@netlify/angular-runtime": "^2.4.0",
         "@types/express": "^5.0.1",
         "@types/jasmine": "~5.1.0",
         "@types/node": "^20.17.19",
@@ -51,5 +54,4 @@
     "engines": {
         "node": "22.x"
     }
-
 }
