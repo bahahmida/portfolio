@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 
 
@@ -9,5 +9,16 @@ import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
   styleUrl: './header.css'
 })
 export class Header {
+    isCollapsed = true;
+  isScrolled = false;
+
+  toggleMenu() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 10;
+  }
 
 }
