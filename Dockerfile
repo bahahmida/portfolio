@@ -1,7 +1,7 @@
 # ============================================
 # ÉTAPE 1 : Construction avec Maven
 # ============================================
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:3.9.9-eclipse-temurin-17 AS build
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ RUN mvn clean package -DskipTests
 # ============================================
 # ÉTAPE 2 : Exécution avec Tomcat
 # ============================================
-FROM tomcat:10.1-jdk17-temurin
+FROM tomcat:10.1.34-jdk17-temurin
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 
