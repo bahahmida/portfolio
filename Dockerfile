@@ -18,10 +18,10 @@ FROM tomcat:10.1.34-jdk17-temurin
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 
+# Copier le WAR directement (Tomcat le décompresse automatiquement)
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 
-RUN unzip /usr/local/tomcat/webapps/ROOT.war -d /usr/local/tomcat/webapps/ROOT && \
-    rm /usr/local/tomcat/webapps/ROOT.war
+# Pas besoin de unzip, Tomcat s'en occupe !
 
 EXPOSE 8080
 
