@@ -1,0 +1,612 @@
+/* ====================================================
+   PORTFOLIO - STYLES COMPLETS
+   ==================================================== */
+
+/* ==================== VARIABLES ==================== */
+:root {
+    --primary-color: #0d6efd;
+    --primary-dark: #0a58ca;
+    --primary-light: #4facfe;
+    --dark-bg: #0a0a0a;
+    --dark-secondary: #0d1117;
+    --dark-card: #1a1a2e;
+    --text-light: #ffffff;
+    --text-muted: #8b949e;
+    --text-dark: #1a1a2e;
+    --gray-light: #f8f9fa;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 10px 40px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+    --border-radius: 15px;
+}
+
+/* ==================== RESET & BASE ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    background: #ffffff;
+    color: var(--text-dark);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar-custom {
+    background: rgba(10, 10, 10, 0.95);
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
+
+.navbar-custom .navbar-brand {
+    color: var(--text-light);
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.navbar-custom .navbar-brand i {
+    color: var(--primary-color);
+}
+
+.navbar-custom .nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 500;
+    padding: 8px 20px !important;
+    border-radius: 8px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.navbar-custom .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.navbar-custom .nav-link:hover {
+    color: var(--text-light) !important;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.navbar-custom .nav-link:hover::after {
+    width: 60%;
+}
+
+.navbar-custom .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.navbar-custom .nav-link.active::after {
+    width: 60%;
+}
+
+.navbar-toggler {
+    border: none !important;
+    padding: 8px 10px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* ==================== HERO / ABOUT SECTION ==================== */
+.hero-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    padding: 100px 0 80px;
+    color: var(--text-light);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(13, 110, 253, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 500px;
+    line-height: 1.8;
+}
+
+.hero-buttons .btn {
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.hero-buttons .btn-primary {
+    background: var(--primary-color);
+    border: none;
+    box-shadow: 0 4px 20px rgba(13, 110, 253, 0.4);
+}
+
+.hero-buttons .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(13, 110, 253, 0.6);
+}
+
+.hero-buttons .btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--text-light);
+}
+
+.hero-buttons .btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: var(--text-light);
+    transform: translateY(-3px);
+}
+
+/* ==================== PHOTO PROFIL - AGrandie ==================== */
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transition: var(--transition);
+}
+
+.profile-image:hover {
+    transform: scale(1.03);
+    border-color: var(--primary-color);
+}
+
+.profile-ring {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border-radius: 50%;
+    border: 2px solid rgba(13, 110, 253, 0.3);
+    animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==================== RÉSEAUX SOCIAUX ==================== */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: var(--text-light);
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+}
+
+/* ==================== SECTIONS COMMUNES ==================== */
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 0 auto 20px;
+    border-radius: 4px;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* ==================== SKILLS SECTION ==================== */
+.skills-section {
+    background: var(--gray-light);
+}
+
+.skill-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.skill-card h5 {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #f0f4ff;
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin: 4px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.skill-tag:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+    cursor: default;
+}
+
+.skill-count {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 15px;
+}
+
+/* ==================== PROJECTS SECTION ==================== */
+.projects-section {
+    background: #ffffff;
+}
+
+.project-card {
+    background: #ffffff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.project-card .card-body {
+    padding: 25px;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 4px 15px;
+    background: rgba(13, 110, 253, 0.1);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.project-card .card-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.project-card .card-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: 3px 12px;
+    background: #f0f4ff;
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin: 3px;
+    font-weight: 500;
+}
+
+.tech-tag:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+/* ==================== CONTACT SECTION ==================== */
+.contact-section {
+    background: var(--gray-light);
+}
+
+.contact-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(13, 110, 253, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.contact-card h5 {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.contact-card p {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+    background: #0a0a0a;
+    padding: 30px 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.footer-social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.footer-social-link:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+/* Tablettes */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .profile-wrapper {
+        max-width: 400px;
+    }
+
+    .profile-image {
+        max-width: 350px;
+    }
+
+    .profile-ring {
+        top: -12px;
+        left: -12px;
+        right: -12px;
+        bottom: -12px;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 120px 0 60px;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px !important;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .profile-wrapper {
+        max-width: 350px;
+    }
+
+    .profile-image {
+        max-width: 280px;
+    }
+
+    .profile-ring {
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+
+    .profile-wrapper {
+        max-width: 280px;
+    }
+
+    .profile-image {
+        max-width: 220px;
+    }
+
+    .profile-ring {
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+    }
+}
