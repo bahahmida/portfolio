@@ -32,6 +32,6 @@ public class HomeServlet extends HttpServlet{
         request.setAttribute("projectCount", projects.size());
 
         // Rediriger vers home.jsp
-        request.getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/jsp/home.jsp").forward(request, response);
     }
 }
