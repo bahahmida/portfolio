@@ -62,7 +62,7 @@
     </dependencies>
 
     <build>
-        <finalName>ROOT</finalName>
+        <finalName>ROOT</finalName>  <!-- ← Changé de portfolio_war_exploded à ROOT -->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
