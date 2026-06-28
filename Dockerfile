@@ -12,16 +12,14 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # ============================================
-# ÉTAPE 2 : Exécution avec Tomcat
+# ÉTAPE 2 : Exécution avec Tomcat 9
 # ============================================
-FROM tomcat:10.1.34-jdk17-temurin
+FROM tomcat:9.0.98-jdk17-temurin
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copier le WAR directement (Tomcat le décompresse automatiquement)
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
-
-# Pas besoin de unzip, Tomcat s'en occupe !
 
 EXPOSE 8080
 
